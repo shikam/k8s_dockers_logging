@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: elasticsearch
+  labels:
+    service: elasticsearch
+spec:
+  ports:
+  containers:
+  - name: elasticsearch
+    image: elasticsearch:6.6.1
+    ports:
+    - containerPort: 9200
+    - containerPort: 9300
+    env:
+    - name: discovery.type
+      value: "single-node"

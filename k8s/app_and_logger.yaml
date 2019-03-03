@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuberneteslogger
+spec:
+  containers:
+  - image: yageldhn/create-random-logs
+    name: random-logger
+    command: ["/bin/sh"]
+    args: ["-c", "/entrypoint.sh &>/var/log/log.out"]
+    volumeMounts:
+    - mountPath: /var/log
+      name: applogs
+  - name: logstologstash
+    image: yageldhn/read_and_send_apps_logs_k8s
+    volumeMounts:
+    - mountPath: /var/log
+      name: applogs
+  volumes:
+  - name: applogs
+    emptyDir: {}

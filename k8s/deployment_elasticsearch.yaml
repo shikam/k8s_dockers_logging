@@ -5,13 +5,19 @@ metadata:
   labels:
     service: elasticsearch
 spec:
-  ports:
   containers:
   - name: elasticsearch
     image: elasticsearch:6.6.1
+    volumeMounts:
+    - mountPath: "/usr/share/elasticsearch/data/"
+      name: elsdata
     ports:
     - containerPort: 9200
     - containerPort: 9300
     env:
     - name: discovery.type
       value: "single-node"
+  volumes:
+  - name: elsdata
+    persistentVolumeClaim:
+      claimName: elsclaim

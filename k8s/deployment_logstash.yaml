@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logstash
+  labels:
+    service: logstash
+spec:
+  containers:
+  - name: logstash
+    image: yageldhn/custom_logstash:latest
+    ports:
+    - containerPort: 9500
+    - containerPort: 5044

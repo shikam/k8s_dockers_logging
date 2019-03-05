@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kibana
+  labels:
+    service: kibana
+spec:
+  ports:
+  containers:
+  - name: kibana
+    image: kibana:6.6.1
+    command: ["/bin/sh"]
+    args: ["-c", "bin/kibana --elasticsearch.url='http://elasticsearch:9200'"]
+    ports:
+    - containerPort: 5601

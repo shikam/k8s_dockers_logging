@@ -11,8 +11,13 @@ spec:
     volumeMounts:
     - mountPath: /var/log
       name: applogs
-  - name: logstologstash
-    image: yageldhn/read_and_send_apps_logs_k8s
+  - image: yageldhn/read_and_send_apps_logs_k8s
+    name: logstologstash
+    env:
+    - name: LOGSTASH_PORT
+      value: "9500"
+    - name: LOGSTASH_HOST
+      value: "10.101.107.93"
     volumeMounts:
     - mountPath: /var/log
       name: applogs

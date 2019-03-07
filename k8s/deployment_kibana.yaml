@@ -10,6 +10,6 @@ spec:
   - name: kibana
     image: kibana:6.6.1
     command: ["/bin/sh"]
-    args: ["-c", "bin/kibana --elasticsearch.url='http://elasticsearch:9200'"]
+    args: ["-c", "bin/kibana --elasticsearch.url='http://10.104.115.89:9200'"]
     ports:
     - containerPort: 5601

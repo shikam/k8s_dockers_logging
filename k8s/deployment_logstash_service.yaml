@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: logstash
-  labels:
-    service: logstash
+  name: logstash-service
 spec:
   ports:
   - port: 9500
@@ -13,4 +11,4 @@ spec:
     name: node2node
     protocol: TCP
   selector:
-    service: logstash
+    app: logstash

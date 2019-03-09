@@ -3,12 +3,11 @@ kind: Pod
 metadata:
   name: website
   labels:
-    service: website
+    app: website
 spec:
-  ports:
   containers:
   - name: website
-    image: yageldhn/website:latest
+    image: yageldhn/website_k8s:latest
     ports:
-    - containerPort: 5000
+    #- containerPort: 5000
     - containerPort: 80

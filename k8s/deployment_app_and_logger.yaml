@@ -17,7 +17,7 @@ spec:
     - name: LOGSTASH_PORT
       value: "9500"
     - name: LOGSTASH_HOST
-      value: "logstash"
+      value: "logstash-service"
     volumeMounts:
     - mountPath: /var/log
       name: applogs

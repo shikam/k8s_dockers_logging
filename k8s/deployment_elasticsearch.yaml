@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: elasticsearch
   labels:
-    service: elasticsearch
+    app: elasticsearch
 spec:
   containers:
   - name: elasticsearch

@@ -2,7 +2,8 @@
 <title>logs website</title>
 	<body>
 <?php
-$url = 'http://elasticsearch:9200/_search';
+//$url = 'http://elasticsearch:9200/_search'; 
+$url = 'elasticsearch-service:9200/_search';  //FOR KUBERNETES
 
 //Initiate cURL.
 $ch = curl_init($url);
@@ -68,7 +69,9 @@ print_logs("");
 function print_logs($host)
 {
 
-$url = 'http://elasticsearch:9200/_search';
+//$url = 'http://elasticsearch:9200/_search';
+$url = 'elasticsearch-service:9200/_search';  //FOR KUBERNETES
+
 
 #Initiate cURL.
 $ch = curl_init($url);

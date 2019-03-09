@@ -15,7 +15,7 @@ spec:
       - name: ELASTICSEARCH_PORT
         value: "9200"
       - name: SERVER_BASEPATH
-        value: /api/v1/namespaces/default/services/kibana-service:5601/proxy
+        value: /api/v1/namespaces/default/services/kibana-service:serving/proxy
       - name: SERVER_HOST
         value: "0.0.0.0"
 
